@@ -1,0 +1,21 @@
+<div class="row mt-4 mt-md-3 mb-2 mb-md-3">
+  <form [formGroup]="formFile" (change)="fileChanged($event)" (ngSubmit)="submit()" class="d-flex">
+    <div class="col-12 p-0">
+      <input class="form-control" type="file" accept=".csv">
+    </div>
+  </form>
+</div>
+<div class="row">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th *ngFor="let item of getHeaders()">{{item}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of getData()">
+        <td *ngFor="let data of item">{{data}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
